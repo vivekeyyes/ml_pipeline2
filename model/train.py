@@ -24,8 +24,19 @@ model = LogisticRegression()
 
 model.fit(X_train, y_train)
 
-os.makedirs('models', exist_ok=True)
+# Create a 'models' directory if it does not exist
+try:
+    os.makedirs('models', exist_ok=True)
+    print("Models directory created or already exists.")
+except Exception as e:
+    print(f"Error creating models directory: {e}")
 
 # Save the trained model
-joblib.dump(model, 'models/trained_model.pkl')
-print("Model training complete and saved.")
+try:
+    joblib.dump(model, 'models/trained_model.pkl')
+    print("Model training complete and saved.")
+except Exception as e:
+    print(f"Error saving model: {e}")
+# Save the trained model
+#joblib.dump(model, 'models/trained_model.pkl')
+#print("Model training complete and saved.")
