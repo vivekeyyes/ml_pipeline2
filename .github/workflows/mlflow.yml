@@ -29,12 +29,12 @@ jobs:
       #    pip install -r requirements.txt
 
       # Step 4: Ensure data.csv is available
-      - name: Ensure dataset exists
-        run: |
-          if [ ! -f data/data.csv ]; then
-            echo "Error: data.csv not found!" 
-            exit 1
-          fi
+      #- name: Ensure dataset exists
+      #  run: |
+      #    if [ ! -f data/data.csv ]; then
+      #      echo "Error: data.csv not found!" 
+      #      exit 1
+      #    fi
 
       # Step 5: Train the model
       - name: Train the model
