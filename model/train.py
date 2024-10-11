@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 import joblib
+import os
 
 # Load the dataset directly from the file path (data.csv is now committed to Git)
 data_path = 'data/data.csv'
