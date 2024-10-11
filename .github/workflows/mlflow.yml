@@ -16,6 +16,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token
+          
+      - name: Check Python environment
+        run: |
+          python --version      # Display Python version
+          which python          # Display path to the Python executable
+          pip --version         # Display pip version (to verify virtual environment)
+          which pip             # Display path to pip
+
 
       # Step 2: Set up Python
       #- name: Set up Python
