@@ -4,6 +4,13 @@ from sklearn.linear_model import LogisticRegression
 import joblib
 import os
 
+mlflow.set_tracking_uri(uri="http://127.0.0.1:5000")
+mlflow.set_experiment("MLflow autolog")
+
+# Enable MLflow autologging for TensorFlow
+mlflow.tensorflow.autolog()
+
+
 # Load the dataset directly from the file path (data.csv is now committed to Git)
 data_path = 'data/data.csv'
 data = pd.read_csv(data_path)
@@ -18,8 +25,11 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Initialize the model (Logistic Regression in this case)
 model = LogisticRegression()
 
+
+# Train the model inside an MLflow run
+with mlflow.start_run() as run:
 # Train the model
-model.fit(X_train, y_train)
+    model.fit(X_train, y_train)
 
 os.makedirs('models', exist_ok=True)
 
