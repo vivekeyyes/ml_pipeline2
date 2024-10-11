@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
+          
+          
+      #- name: Set PATH variable
+      #  run: |
+      #    echo "/home/runner/.local/bin" >> $GITHUB_PATH
+      #    echo "Current PATH: $PATH"
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -45,3 +51,13 @@ jobs:
       # Step 7: Register the model (if passed the test)
       - name: Register the model (if passed test)
         run: python mlflow/register.py
+      
+      - name: Commit model to the repository
+        run: |
+          git config --local user.email "vivek.sadarahalli@eyyes.com"
+          git config --local user.name "Vivek"
+          git add models/trained_model.pkl
+          git commit -m "Add trained model" || echo "No changes to commit"
+          git push origin main  
+
+ 
