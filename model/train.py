@@ -20,6 +20,8 @@ model = LogisticRegression()
 # Train the model
 model.fit(X_train, y_train)
 
+os.makedirs('models', exist_ok=True)
+
 # Save the trained model
 joblib.dump(model, 'models/trained_model.pkl')
 print("Model training complete and saved.")
