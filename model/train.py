@@ -24,6 +24,8 @@ model = LogisticRegression()
 
 model.fit(X_train, y_train)
 
+print("Current Working Directory:", os.getcwd())
+
 # Create a 'models' directory if it does not exist
 try:
     os.makedirs('models', exist_ok=True)
