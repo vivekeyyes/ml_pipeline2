@@ -17,6 +17,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token
           
+      # Step 2: Set up Conda environment
+      - name: Set up Conda
+        run: |
+          echo "Setting up Conda..."
+          # Activate the Conda environment
+          source C:/Users/Vivek.Sadarahalli/AppData/Local/anaconda3/etc/profile.d/conda.sh
+          conda activate demo_training  # Replace with your environment name
+          conda info --envs  # List all Conda environments to confirm activation
+          python --version  # Confirm the Python version
+          pip --version     # Confirm the pip version
+      
       - name: Check Python environment
         run: |
           python --version      # Display Python version
@@ -46,7 +57,11 @@ jobs:
 
       # Step 5: Train the model
       - name: Train the model
-        run: python model/train.py
+        run: |
+          # Activate Conda environment before training
+          source C:/Users/Vivek.Sadarahalli/AppData/Local/anaconda3/etc/profile.d/conda.sh
+          conda activate demo_training
+          python model/train.py
 
       # Step 6: Test the model
       - name: Test the model
