@@ -20,9 +20,9 @@ jobs:
       - name: Check Python environment
         run: |
           python --version      # Display Python version
-          which python          # Display path to the Python executable
+          where python          # Display path to the Python executable
           pip --version         # Display pip version (to verify virtual environment)
-          which pip             # Display path to pip
+          where pip             # Display path to pip
 
 
       # Step 2: Set up Python
