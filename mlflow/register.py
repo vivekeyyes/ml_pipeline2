@@ -4,7 +4,7 @@ import joblib
 import os
 
 # Set the MLflow tracking URI
-mlflow.set_tracking_uri("http://localhost:5001")  # Replace with your MLflow server URI if needed
+#mlflow.set_tracking_uri("http://localhost:5001")  # Replace with your MLflow server URI if needed
 
 # Define model and accuracy file paths
 model_path = 'models/trained_model.pkl'
