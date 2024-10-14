@@ -91,4 +91,4 @@ jobs:
 
       
       #- name: Register the model (if passed test)
-     #   run: python mlflow/register.py
+     #   run: python mlflow/register.py 
