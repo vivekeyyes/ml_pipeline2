@@ -58,11 +58,11 @@ jobs:
       #    fi
 
        # Step 3: Start MLflow server (in the background)
-       - name: Start MLflow server
-        shell: cmd
-        run: |
-          start /B mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 5000
-          timeout /T 10  # Wait for 10 seconds to ensure the server has started
+       #- name: Start MLflow server
+       # shell: cmd
+       # run: |
+       #   start /B mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns --host 0.0.0.0 --port 5000
+       #   timeout /T 10  # Wait for 10 seconds to ensure the server has started
       
       # Step 5: Train the model
       - name: Train the model
