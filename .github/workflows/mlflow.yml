@@ -66,8 +66,23 @@ jobs:
 
       # Step 6: Test the model
       - name: Test the model
-        run: python model/test.py
+        shell: cmd
+        run: |
+          call conda activate demo_training
+          call python model/test.py
+
+      
+      
+      #- name: Test the model
+      #  run: python model/test.py
 
       # Step 7: Register the model (if passed the test)
       - name: Register the model (if passed test)
-        run: python mlflow/register.py
+        shell: cmd
+        run: |
+          call conda activate demo_training
+          call python mlflow/register.py
+
+      
+      #- name: Register the model (if passed test)
+     #   run: python mlflow/register.py
