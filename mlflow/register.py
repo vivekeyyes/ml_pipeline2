@@ -11,7 +11,7 @@ import time
 # Start the MLflow server programmatically
 mlflow_server_command = [
     "mlflow", "server",
-    "--backend-store-uri", "file:///D:/Automation_pipeline/mlruns",
+    "--backend-store-uri", "file:///D:/Automation_pipeline/mlruns2",
     "--default-artifact-root", "file:///D:/Automation_pipeline/mlarti",
     "--host", "0.0.0.0",
     "--port", "5000"
@@ -31,7 +31,7 @@ mlflow.set_tracking_uri("http://localhost:5000")  # Replace with your MLflow ser
 # Override the artifact root for the new run
 os.environ["MLFLOW_ARTIFACT_URI"] = new_artifact_root
 
-mlflow.set_experiment("exp_name")
+mlflow.set_experiment("exp_name2")
 
 #client = MlflowClient()
 
