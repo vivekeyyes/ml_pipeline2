@@ -8,8 +8,8 @@ from mlflow.tracking import MlflowClient
 # Start the MLflow server programmatically
 mlflow_server_command = [
     "mlflow", "server",
-    "--backend-store-uri", "/mnt/vsa_sw5/mlflow_maokii/mlruns",
-    "--default-artifact-root", "/mnt/vsa_sw5/mlflow_maokii/mlflow_artifacts/Eval_results",
+    "--backend-store-uri", r"D:\Automation_pipeline\mlruns",
+    "--default-artifact-root", r"D:\Automation_pipeline\artifacts",
     "--host", "0.0.0.0",
     "--port", "5000"
 ]
