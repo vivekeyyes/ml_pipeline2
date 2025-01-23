@@ -26,6 +26,9 @@ time.sleep(5)  # Wait for the server to initialize
 # Set the MLflow tracking URI
 mlflow.set_tracking_uri("http://localhost:5000")  # Replace with your MLflow server URI if needed
 
+
+mlflow.set_experiment("exp_name")
+
 #client = MlflowClient()
 
 
