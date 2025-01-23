@@ -12,7 +12,7 @@ import time
 mlflow_server_command = [
     "mlflow", "server",
     "--backend-store-uri", "file:///D:/Automation_pipeline/mlruns",
-    "--default-artifact-root", r"D:\Automation_pipeline\artifacts",
+    "--default-artifact-root", "file:///D:/Automation_pipeline/artifacts",
     "--host", "0.0.0.0",
     "--port", "5000"
 ]
