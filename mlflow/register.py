@@ -11,11 +11,12 @@ import time
 # Start the MLflow server programmatically
 mlflow_server_command = [
     "mlflow", "server",
-    "--backend-store-uri", r"D:\Automation_pipeline\mlruns",
+    "--backend-store-uri", "file:///D:/Automation_pipeline/mlruns",
     "--default-artifact-root", r"D:\Automation_pipeline\artifacts",
     "--host", "0.0.0.0",
     "--port", "5000"
 ]
+
 
 print("Starting the MLflow server...")
 mlflow_server = subprocess.Popen(mlflow_server_command)
