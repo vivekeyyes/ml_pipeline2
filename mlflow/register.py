@@ -14,8 +14,15 @@ mlflow_server_command = [
     "--port", "5000"
 ]
 
+print("Starting the MLflow server...")
+mlflow_server = subprocess.Popen(mlflow_server_command)
+
+time.sleep(5)  # Wait for the server to initialize
+
 # Set the MLflow tracking URI
 mlflow.set_tracking_uri("http://localhost:5000")  # Replace with your MLflow server URI if needed
+
+#client = MlflowClient()
 
 
 # Define model and accuracy file paths
