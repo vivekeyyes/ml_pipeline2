@@ -2,9 +2,21 @@ import mlflow
 import mlflow.sklearn
 import joblib
 import os
+from mlflow.tracking import MlflowClient
+
+
+# Start the MLflow server programmatically
+mlflow_server_command = [
+    "mlflow", "server",
+    "--backend-store-uri", "/mnt/vsa_sw5/mlflow_maokii/mlruns",
+    "--default-artifact-root", "/mnt/vsa_sw5/mlflow_maokii/mlflow_artifacts/Eval_results",
+    "--host", "0.0.0.0",
+    "--port", "5000"
+]
 
 # Set the MLflow tracking URI
 mlflow.set_tracking_uri("http://localhost:5000")  # Replace with your MLflow server URI if needed
+
 
 # Define model and accuracy file paths
 model_path = 'models/trained_model.pkl'
