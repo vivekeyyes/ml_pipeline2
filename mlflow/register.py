@@ -17,6 +17,8 @@ mlflow_server_command = [
     "--port", "5000"
 ]
 
+new_artifact_root = "file:///D:/Automation_pipeline/mlarti"
+
 ##
 print("Starting the MLflow server...")
 mlflow_server = subprocess.Popen(mlflow_server_command)
@@ -26,6 +28,8 @@ time.sleep(5)  # Wait for the server to initialize
 # Set the MLflow tracking URI
 mlflow.set_tracking_uri("http://localhost:5000")  # Replace with your MLflow server URI if needed
 
+# Override the artifact root for the new run
+os.environ["MLFLOW_ARTIFACT_URI"] = new_artifact_root
 
 mlflow.set_experiment("exp_name")
 
