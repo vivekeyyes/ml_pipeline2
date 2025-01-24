@@ -61,6 +61,10 @@ with mlflow.start_run() as run:
     print(f"Recall: {recall * 100:.2f}%")
     print(f"F1 Score: {f1 * 100:.2f}%")
 
+    # Optionally, save the results
+    with open('models/accuracy.txt', 'w') as f:
+        f.write(f"Accuracy: {accuracy * 100:.2f}%\n")
+
     # Log metrics to MLflow
     mlflow.log_metric("test_accuracy", accuracy)
     mlflow.log_metric("precision", precision)
